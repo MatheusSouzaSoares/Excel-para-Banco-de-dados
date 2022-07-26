@@ -4,24 +4,34 @@ from PyQt5.QtWidgets import QLineEdit,QComboBox
 textocaminho = ''
 
 def caminhoExcel():
-    textocaminho = QtWidgets.QFileDialog.getOpenFileName()[0]
-    print(textocaminho)
+    textocaminho =QtWidgets.QFileDialog.getOpenFileName()[0]
+    janela.txt_caminho_excel.setText('CARREGANDO')
+    df = pd.read_excel(textocaminho)
     janela.txt_caminho_excel.setText(textocaminho)
-
 
 def executar():
     bancodedados = janela.nome_banco_de_dados.currentText()
+    print(bancodedados)
     user = janela.nome_user.text()
+    print(user)
     passw = janela.nome_senha.text()
+    print(passw)
     host = janela.nome_host.text()
+    print(host)
     nomedabd = janela.nome_db.text()
+    print(nomedabd)
     tabela = janela.nome_tabela.text()
-    df = pd.read_excel(textocaminho)
+    print(tabela)
+    print('Sucesso')
     from sqlalchemy import create_engine
     # format: mysql://user:pass@host/db
-    engine = create_engine(bancodedados'://'user':'passw'@'host'/'nomedabd)
-    df.to_sql(tabela, con=engine)
-
+    print('Sucesso')
+    query = bancodedados +'://' + user + ':' + passw+ '@' + host+ '/' + nomedabd
+    print('Sucesso')
+    engine = create_engine(query)
+    print(engine)
+    df.to_sql('tabela', con=engine)
+    print('sucesso')
 
 
 app = QtWidgets.QApplication([])
