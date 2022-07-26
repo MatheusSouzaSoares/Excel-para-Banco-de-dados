@@ -13,16 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QComboBox" name="nome_banco_de_dados">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>130</y>
-     <width>351</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -138,56 +128,6 @@
    </property>
    <property name="text">
     <string>INICIAR</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="nome_bd">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>170</y>
-     <width>351</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="nome_host">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>210</y>
-     <width>351</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="nome_user">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>250</y>
-     <width>351</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="nome_senha">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>290</y>
-     <width>351</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="nome_tabela">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>330</y>
-     <width>351</width>
-     <height>31</height>
-    </rect>
    </property>
   </widget>
  </widget>
