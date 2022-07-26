@@ -1,0 +1,48 @@
+pyuic5 -x tela_excel_para_banco_de_dados.ui -o main.py
+janela = Tk()
+janela.title('Excel para Banco de Dados')
+janela.geometry('350x500')
+
+botao_excel = Button(janela, text='Selecione o arquivo XlSX', command=caminhoExcel)
+botao_excel.grid(column=0, row=1)
+
+texto_selecionar_host = Label(text='Host:', justify='left')
+texto_selecionar_host.grid(column=0, row=3)
+
+selecionar_host = Text(height=1, width=40)
+selecionar_host.grid(column=0, row=4)
+
+texto_selecionar_bd = Label(text='Banco de dados:', justify='left')
+texto_selecionar_bd.grid(column=0, row=5)
+
+selecionar_bd = Combobox(janela, values=["postgresql", "mysql", "mssql", "sqlite", "oracle" ])
+selecionar_bd.grid(column=0, row=6, padx=1, pady=10)
+
+texto_selecionar_namebd = Label(text='Data Base:', justify='left')
+texto_selecionar_namebd.grid(column=0, row=7)
+
+namebd = Text(height=1, width=40)
+namebd.grid(column=0, row=8, padx=1, pady=5)
+
+texto_selecionar_user = Label(text='Usuário:', justify='left')
+texto_selecionar_user.grid(column=0, row=9)
+
+selecionar_user = Text(height=1, width=40)
+selecionar_user.grid(column=0, row=10, padx=1, pady=5)
+
+texto_selecionar_pass = Label(text='Senha:', justify='left')
+texto_selecionar_pass.grid(column=0, row=11)
+
+selecionar_pass = Entry(janela, show="*")
+selecionar_pass.grid(column=0, row=12)
+
+tabela_name = Label(text='Nome da tabela: ', justify='left')
+tabela_name.grid(column=0, row=13)
+
+tabela_namt = Text(height=1, width=40)
+tabela_namt.grid(column=0, row=14, padx=1, pady=5)
+
+botao_excel = Button(janela, text='Confirmar', command=executar)
+botao_excel.grid(column=0, row=15)
+
+janela.mainloop()
