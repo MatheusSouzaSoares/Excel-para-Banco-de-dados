@@ -1,134 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Janela</class>
- <widget class="QWidget" name="Janela">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>505</width>
-    <height>550</height>
+    <width>418</width>
+    <height>563</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
-  <widget class="QLabel" name="label">
+  <property name="windowTitle">
+   <string>Excel para Banco de dados</string>
+  </property>
+  <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>130</y>
-     <width>91</width>
-     <height>31</height>
+     <y>134</y>
+     <width>401</width>
+     <height>121</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Banco de dados:</string>
-   </property>
+   <layout class="QFormLayout" name="l_conect">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Host:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="nome_host"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="Line" name="line_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Nome da tabela:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="nome_tabela"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="Line" name="line_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="Line" name="line_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Segoe UI Semibold</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Conexão</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>180</y>
-     <width>131</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Nome da database:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>210</y>
-     <width>55</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Host:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>260</y>
-     <width>55</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Usuário:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>300</y>
-     <width>55</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Senha:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>330</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Nome da tabela:</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
      <y>380</y>
-     <width>461</width>
-     <height>41</height>
+     <width>401</width>
+     <height>101</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Selecionar arquivo EXCEL</string>
-   </property>
+   <layout class="QVBoxLayout" name="l_button">
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Selecione o arquivo Excel</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="txt_caminho_excel">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>Iniciar</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QLabel" name="txt_caminho_excel">
+  <widget class="QWidget" name="verticalLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>430</y>
-     <width>461</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>470</y>
-     <width>461</width>
+     <x>10</x>
+     <y>490</y>
+     <width>401</width>
      <height>61</height>
     </rect>
    </property>
-   <property name="text">
-    <string>INICIAR</string>
+   <layout class="QVBoxLayout" name="l_progresso">
+    <item>
+     <widget class="QLabel" name="status_txt">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>401</width>
+     <height>156</height>
+    </rect>
    </property>
+   <layout class="QFormLayout" name="formLayout_2">
+    <item row="0" column="0">
+     <widget class="Line" name="line_14">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="Line" name="line_15">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Linguagem:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="7" column="1">
+     <widget class="Line" name="line_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Nome:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="nome_banco"/>
+    </item>
+    <item row="9" column="1">
+     <widget class="Line" name="line_9">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="label_10">
+      <property name="font">
+       <font>
+        <family>Segoe UI Semibold</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Banco de dados</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>254</y>
+     <width>401</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="l_conect_2">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="font">
+       <font>
+        <family>Segoe UI Semibold</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Usúario:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Senha:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="nome_user"/>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="nome_passw"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="Line" name="line_12">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="Line" name="line_13">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
