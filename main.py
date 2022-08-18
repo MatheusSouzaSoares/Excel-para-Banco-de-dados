@@ -9,37 +9,37 @@ def agregarProcesso():
     valor = valor + 10
     if valor > 100:
         valor=10
-    ui.l_progresso.progressBar.setValue(valor)
+    ui.progressBar.setValue(valor)
     time.sleep(1)
 
 def caminhoExcel():
     textocaminho = QtWidgets.QFileDialog.getOpenFileName()[0]
-    ui.l_button.txt_caminho_excel.setText('CARREGANDO')
+    ui.txt_caminho_excel.setText('CARREGANDO')
     df = pd.read_excel(textocaminho)
-    ui.l_button.txt_caminho_excel.setText(textocaminho)
+    ui.txt_caminho_excel.setText(textocaminho)
     global valor
     valor=0
     agregarProcesso()
-    ui.l_progresso.status_txt.setText('Arquivo carregado')
+    ui.status_txt.setText('Arquivo carregado')
     
 def executar():
     try:
         global valor
         valor=0
-        bancodedados = Form.formLayout_2.nome_banco_de_dados.currentText()
-        user = ui.l_conect_2.nome_user.text()
+        bancodedados = ui.comboBox.currentText()
+        user = ui.nome_user.text()
         ui.status_txt.setText('Conectando ao banco...')
         agregarProcesso()
-        passw = ui.l_conect_2.nome_senha.text()
+        passw = ui.nome_passw.text()
         agregarProcesso()
         ui.status_txt.setText('Estabelecendo conexão...')
-        host = ui.l_conect.nome_host.text()
+        host = ui.nome_host.text()
         agregarProcesso()
         ui.status_txt.setText('Conectado...')
-        nomedabd = ui.l_conect.nome_db.text()
+        nomedabd = ui.nome_banco.text()
         agregarProcesso()
         ui.status_txt.setText('Carregando tabelas...')
-        tabela = ui.l_conect.nome_tabela.text()
+        tabela = ui.nome_tabela.text()
         agregarProcesso()
         ui.status_txt.setText('Transferindo tabelas...')
         from sqlalchemy import create_engine
@@ -48,11 +48,13 @@ def executar():
         ui.status_txt.setText('Criando código sql...')
         query = bancodedados + '://' + user + ':' + passw + '@' + host + '/' + nomedabd
         agregarProcesso()
-        ui.tatus_txt.setText('Inserindo ao banco...')
+        ui.status_txt.setText('Inserindo ao banco...')
         engine = create_engine(query)
         agregarProcesso()
+        print(engine)
         ui.status_txt.setText('Completo')
-        ui.df.to_sql(tabela, con=engine)
+        print(tabela)
+        df.to_sql(tabela, con=engine)
         agregarProcesso()
         ui.status_txt.setText('Sucesso')
     except Exception as err:
@@ -119,7 +121,7 @@ class Ui_Form(object):
         self.l_button.setObjectName("l_button")
         self.pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(caminhoExcel)
+        
         self.l_button.addWidget(self.pushButton)
         self.txt_caminho_excel = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         self.txt_caminho_excel.setText("")
@@ -225,7 +227,8 @@ class Ui_Form(object):
         self.line_13.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.line_13.setObjectName("line_13")
         self.l_conect_2.setWidget(5, QtWidgets.QFormLayout.ItemRole.FieldRole, self.line_13)
-
+        self.pushButton.clicked.connect(caminhoExcel)
+        self.pushButton_2.clicked.connect(executar)
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
