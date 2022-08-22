@@ -15,7 +15,7 @@ def agregarProcesso():
 def caminhoExcel():
     textocaminho = QtWidgets.QFileDialog.getOpenFileName()[0]
     ui.txt_caminho_excel.setText('CARREGANDO')
-    df = pd.read_excel(textocaminho)
+    ui.df = pd.read_excel(textocaminho)
     ui.txt_caminho_excel.setText(textocaminho)
     global valor
     valor=0
@@ -54,7 +54,8 @@ def executar():
         print(engine)
         ui.status_txt.setText('Completo')
         print(tabela)
-        df.to_sql(tabela, con=engine)
+        ui.df.to_sql(tabela, if_exists="append", con=engine)
+        agregarProcesso()
         agregarProcesso()
         ui.status_txt.setText('Sucesso')
     except Exception as err:
@@ -66,6 +67,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(418, 563)
+        Form.setFixedWidth(418)
+        Form.setFixedHeight(563)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
